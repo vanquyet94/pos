@@ -7,8 +7,9 @@ import { CustomerModule } from './customer/customer.module';
 import { EmployeeModule } from './employee/employee.module';
 import { UserModule } from './user/user.module';
 import { MediaModule } from './media/media.module';
+import { MembershipModule } from './membership/membership.module';
 
 @Module({
-  imports: [WorkspaceModule, ProductModule, OrderModule, CatalogModule, CustomerModule, EmployeeModule, UserModule, MediaModule],
+  imports: [WorkspaceModule, ProductModule, OrderModule, CatalogModule, CustomerModule, EmployeeModule, UserModule, MediaModule, MembershipModule],
 })
 export class ModulesModule {}

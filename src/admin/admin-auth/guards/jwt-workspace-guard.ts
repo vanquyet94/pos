@@ -5,7 +5,7 @@ import { UserService } from 'src/modules/user/user.service';
 import { TypeOfAccessToken } from '../admin-auth.constant';
 
 @Injectable()
-export class JwtAuthStrategy extends PassportStrategy(Strategy) {
+export class JwtWorkspaceStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly _userService: UserService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -15,7 +15,7 @@ export class JwtAuthStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any) {
-    if (TypeOfAccessToken.USER != payload?.t) {
+    if (TypeOfAccessToken.WORKSPACE != payload?.t) {
       throw new UnauthorizedException();
     }
     const user = await this._userService.findUserById(payload?.u);

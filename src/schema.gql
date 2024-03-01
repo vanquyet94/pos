@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID
+  avatar: String
+  nickname: String
+  email: String
+}
+
+type Employee {
+  id: ID
+  avatar: String
+}
+
+type LoginResponse {
+  accessToken: String
+  refreshToken: String
+  user: User
+}
+
+type LoginWorkspaceResponse {
+  accessToken: String
+  employee: Employee
+}
+
+type Query {
+  login(payload: LoginRequest!): LoginResponse!
+  loginWorkspace(payload: LoginWorkspaceRequest!): LoginWorkspaceResponse!
+}
+
+input LoginRequest {
+  email: String!
+  password: String!
+}
+
+input LoginWorkspaceRequest {
+  workspace: String!
+}

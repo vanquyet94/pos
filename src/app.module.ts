@@ -13,15 +13,17 @@ import { CustomerModule } from './customer/customer.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      context: ({ req, res }) => ({ req, res }),
+      context: ({ req, res }) => ({ req, res })
     }),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB),
+    MongooseModule.forRoot(process.env.DB, {
+      autoIndex: true
+    }),
     ModulesModule,
     AdminModule,
     CustomerModule
   ]
 })
-export class AppModule {}
+export class AppModule { }

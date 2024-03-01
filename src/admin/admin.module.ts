@@ -8,8 +8,9 @@ import { AdminOrderModule } from './admin-order/admin-order.module';
 import { AdminMediaModule } from './admin-media/admin-media.module';
 import { AdminCustomerModule } from './admin-customer/admin-customer.module';
 import { AdminCatalogModule } from './admin-catalog/admin-catalog.module';
+import { AdminMembershipModule } from './admin-membership/admin-membership.module';
 
 @Module({
-  imports: [AdminAuthModule, AdminWorkspaceModule, AdminEmployeeModule, AdminUserModule, AdminProductModule, AdminOrderModule, AdminMediaModule, AdminCustomerModule, AdminCatalogModule]
+  imports: [AdminAuthModule, AdminWorkspaceModule, AdminEmployeeModule, AdminUserModule, AdminProductModule, AdminOrderModule, AdminMediaModule, AdminCustomerModule, AdminCatalogModule, AdminMembershipModule]
 })
 export class AdminModule {}
